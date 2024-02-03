@@ -24,7 +24,7 @@ class MarkdownPreviewer extends React.Component{
   render(){
     return (
       <div>
-        <Editor content={this.state.editorText} handleEditorChange={this.handleEditorChange} />
+        <Editor handleEditorChange={this.handleEditorChange} content={this.state.editorText} />
         <Previewer content={this.state.editorText}/>
       </div>
       
@@ -34,7 +34,7 @@ class MarkdownPreviewer extends React.Component{
 
 class Editor extends React.Component{
   render(){
-    console.log('editor:', this.props.content);
+    //console.log('editor:', this.props.content);
     return(
       <div>
         <p>Editor:</p>
@@ -53,13 +53,10 @@ class Previewer extends React.Component{
     return (
       <div>
         <p>Preview:</p>
-        <div id='preview' className='textarea'>
-        </div>
+        <div id='preview' className='textarea' />
       </div>
     );
   }
 }
-
-ReactDOM.render(<MarkdownPreviewer />, document.getElementById('root'));
 
 export default MarkdownPreviewer;
